@@ -1,13 +1,9 @@
 name: CronCapture
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
-
+  schedule:
+    - cron: "5 * * * *"
 jobs:
   capture:
     # The type of runner that the job will run on
