@@ -45,7 +45,7 @@ jobs:
           echo "path : ${{ steps.screenshot-website.outputs.path }}"
           CURRENT_DATETIME=$(date +'%Y-%m-%d_%H-%M-%S')
           mkdir "./images"
-          cp "${{ steps.screenshot-website.outputs.path }}" "./images/log-${CURRENT_DATETIME}.png"
+          cp "${{ steps.screenshot-website.outputs.path }}" "./images/log-${CURRENT_DATETIME}-JST.png"
           git config core.filemode false
           git config user.name github-actions
           git config user.email action@github.com
