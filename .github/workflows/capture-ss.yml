@@ -36,7 +36,7 @@ jobs:
           #full-page: true
           timeout: 180
           width: 1000
-          height: 3700
+          height: 3000
           scale-factor: 1
       - name: commit image
         env:
