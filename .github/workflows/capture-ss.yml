@@ -23,6 +23,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: Screenshot Website
+        id: screenshot-website
         uses: swinton/screenshot-website@v1.x
         timeout-minutes: 5
         with:
@@ -33,6 +34,10 @@ jobs:
           width: 1000
           height: 3000
           scale-factor: 1
+      - name: commit image
+        run: |
+          echo "path : ${{ steps.screenshot-website.outputs.path }}"
+          git config core.filemode false
 #      - name: save capture image
 #        uses: actions/upload-artifact@v2
 #        with:
