@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "5 * * * *"
+
+permissions:
+  contents: write
+
 jobs:
   capture:
     # The type of runner that the job will run on
