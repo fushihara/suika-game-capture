@@ -35,9 +35,9 @@ jobs:
           destination: screenshot.png
           #full-page: true
           timeout: 180
-          width: 800
-          height: 3000
-          scale-factor: 0.8
+          width: 1000
+          height: 3500
+          scale-factor: 1
       - name: commit image
         env:
           TZ: 'Asia/Tokyo' # タイムゾーン指定
