@@ -36,7 +36,7 @@ jobs:
           #full-page: true
           timeout: 180
           width: 1000
-          height: 3000
+          height: 4000
           scale-factor: 1
       - name: commit image
         env:
@@ -52,8 +52,3 @@ jobs:
           git add .
           git commit -m "Commit updated files"
           git push
-#      - name: save capture image
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: capture image
-#          path: ./screenshot.png
