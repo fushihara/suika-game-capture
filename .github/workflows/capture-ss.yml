@@ -34,7 +34,7 @@ jobs:
           #full-page: true
           timeout: 180
           width: 1280
-          height: 2000
+          height: 3000
           scale-factor: 1
 #      - name: save capture image
 #        uses: actions/upload-artifact@v2
