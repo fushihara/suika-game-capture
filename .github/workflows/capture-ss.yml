@@ -45,6 +45,7 @@ jobs:
           git config core.filemode false
           git config user.name github-actions
           git config user.email action@github.com
+          git add .
           git commit -m "Commit updated files"
           git push
 #      - name: save capture image
