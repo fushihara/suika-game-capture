@@ -31,7 +31,10 @@ jobs:
         with:
           source: https://store-jp.nintendo.com/software/ranking/
           destination: screenshot.png
-          full-page: true
+          #full-page: true
+          timeout: 180
+          width: 1920
+          height: 3000
 #      - name: save capture image
 #        uses: actions/upload-artifact@v2
 #        with:
