@@ -28,6 +28,7 @@ jobs:
           echo test, and deploy your project.
       - name: Screenshot Website
         uses: swinton/screenshot-website@v1.x
+        timeout-minutes: 5
         with:
           source: https://store-jp.nintendo.com/software/ranking/
           destination: screenshot.png
