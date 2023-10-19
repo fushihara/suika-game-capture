@@ -29,11 +29,11 @@ jobs:
       - name: Screenshot Website
         uses: swinton/screenshot-website@v1.x
         with:
-          source: https://github.com/swinton/screenshot-website
+          source: https://store-jp.nintendo.com/software/ranking/
           destination: screenshot.png
           full-page: true
-      - name: save capture image
-        uses: actions/upload-artifact@v2
-        with:
-          name: capture image
-          path: ./screenshot.png
+#      - name: save capture image
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: capture image
+#          path: ./screenshot.png
