@@ -33,8 +33,9 @@ jobs:
           destination: screenshot.png
           #full-page: true
           timeout: 180
-          #width: 1920
-          #height: 3000
+          width: 1280
+          height: 2000
+          scale-factor: 1
 #      - name: save capture image
 #        uses: actions/upload-artifact@v2
 #        with:
