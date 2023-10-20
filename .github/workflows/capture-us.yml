@@ -2,8 +2,8 @@ name: capture US store ranking
 
 on:
   workflow_dispatch:
-  #schedule:
-  #  - cron: "5 * * * *"
+  schedule:
+    - cron: "5 * * * *"
 
 permissions:
   contents: write
