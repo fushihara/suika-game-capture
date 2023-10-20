@@ -1,4 +1,4 @@
-name: CronCapture
+name: capture JP store ranking
 
 on:
   workflow_dispatch:
