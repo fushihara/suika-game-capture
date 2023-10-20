@@ -38,6 +38,8 @@ jobs:
           width: 1000
           height: 3000
           scale-factor: 1
+          removeElements:
+            main > div[class^=background__Background]
       - name: commit image
         env:
           TZ: 'Asia/Tokyo' # タイムゾーン指定
