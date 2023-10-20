@@ -37,7 +37,7 @@ jobs:
           timeout: 180
           width: 1000
           height: 3000
-          scale-factor: 1
+          scale-factor: 0.5
           removeElements:
             main > div[class^=background__Background]
       - name: commit image
