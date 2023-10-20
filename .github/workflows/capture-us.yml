@@ -1,0 +1,54 @@
+name: CronCapture
+
+on:
+  workflow_dispatch:
+  #schedule:
+  #  - cron: "5 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access itQW
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+      - name: Screenshot Website
+        id: screenshot-website
+        uses: swinton/screenshot-website@v1.x
+        timeout-minutes: 5
+        with:
+          source: https://www.nintendo.com/us/store/games/best-sellers/#sort=df
+          destination: screenshot.png
+          #full-page: true
+          timeout: 180
+          width: 1000
+          height: 3000
+          scale-factor: 1
+      - name: commit image
+        env:
+          TZ: 'Asia/Tokyo' # タイムゾーン指定
+        run: |
+          echo "path : ${{ steps.screenshot-website.outputs.path }}"
+          CURRENT_DATETIME=$(date +'%Y-%m-%d_%H-%M-%S')
+          mkdir -p "./images-us"
+          cp "${{ steps.screenshot-website.outputs.path }}" "./images/log-${CURRENT_DATETIME}-JST.png"
+          git config core.filemode false
+          git config user.name github-actions
+          git config user.email action@github.com
+          git add .
+          git commit -m "Commit updated files"
+          git push
