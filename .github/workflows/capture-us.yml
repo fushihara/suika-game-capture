@@ -36,7 +36,7 @@ jobs:
           #full-page: true
           timeout: 180
           width: 1000
-          height: 3000
+          height: 5000
           scale-factor: 0.5
           removeElements:
             main > div[class^=background__Background]
