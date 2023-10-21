@@ -48,8 +48,9 @@ jobs:
           git config user.email action@github.com
           git pull
           CURRENT_DATETIME=$(date +'%Y-%m-%d_%H-%M-%S')
-          mkdir -p "./images-us"
-          cp "${{ steps.screenshot-website.outputs.path }}" "./images-us/log-${CURRENT_DATETIME}-JST.png"
+          DIR_TIME=$(date +'%Y-%m-%d')
+          mkdir -p "./images-jp/${DIR_TIME}"
+          cp "${{ steps.screenshot-website.outputs.path }}" "./images-jp/${DIR_TIME}/log-${CURRENT_DATETIME}-JST.png"
           git add .
           git commit -m "Commit updated files"
           git push
