@@ -51,7 +51,7 @@ jobs:
           DIR_TIME_2=$(date +'%d')
           FILE_TIME=$(date +'%Y-%m%d_%H%M%S')
           mkdir -p "./images-jp/${DIR_TIME_1}/${DIR_TIME_2}"
-          cp "${{ steps.screenshot-website.outputs.path }}" "./images-jp/${DIR_TIME_1}/${DIR_TIME_2}/log-jp-${CURRENT_DATETIME}-JST.png"
+          cp "${{ steps.screenshot-website.outputs.path }}" "./images-jp/${DIR_TIME_1}/${DIR_TIME_2}/log-jp-${FILE_TIME}-JST.png"
           git add .
           git commit -m "Commit updated files"
           git push
